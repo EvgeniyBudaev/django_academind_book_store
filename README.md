@@ -1,0 +1,2 @@
+# django_academind_book_store
+ django_academind_book_store
