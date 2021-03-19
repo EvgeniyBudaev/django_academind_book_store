@@ -14,3 +14,15 @@ python manage.py runserver
 # Миграции
 python manage.py makemigrations
 python manage.py migrate
+
+# терминал Django
+python manage.py shell
+from book_outlet.models import Book
+# Inserting Data
+harry_potter = Book(title="Harry Potter 1 - The Philosopher's Stone", rating=5)
+harry_potter.save()
+lord_pf_the_rings = Book(title="Lord of the Rings", rating=4)
+lord_pf_the_rings.save()
+# Getting Data
+Book.objects.all()
+# exit
