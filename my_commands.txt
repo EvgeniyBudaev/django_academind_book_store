@@ -25,4 +25,11 @@ lord_pf_the_rings = Book(title="Lord of the Rings", rating=4)
 lord_pf_the_rings.save()
 # Getting Data
 Book.objects.all()
-# exit
+# Update Data
+python manage.py makemigrations  # select 2 Добавить в models null=True
+python manage.py migrate
+python manage.py shell
+from book_outlet.models import Book
+Book.objects.all()[1].author
+# Выход
+exit()
