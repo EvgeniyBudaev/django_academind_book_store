@@ -1,12 +1,16 @@
-# создание нового проекта
-django-admin startproject django_course # monthly_challenges
+# Создание нового проекта
+django-admin startproject django_course # django_academind_book_store
 
-# создание нового приложения
+# Создание нового приложения
 python manage.py startapp challenges
 
-# запуск сервера
+# Запуск сервера
 python manage.py runserver
 
-# форматирование кода
+# Форматирование кода
 # на mac option + command + L
 # на windows ctrl + alt + I
+
+# Миграции
+python manage.py makemigrations
+python manage.py migrate
