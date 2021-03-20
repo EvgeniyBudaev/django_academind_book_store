@@ -15,16 +15,20 @@ python manage.py runserver
 python manage.py makemigrations
 python manage.py migrate
 
+
 # терминал Django
 python manage.py shell
 from book_outlet.models import Book
+
 # Inserting Data
 harry_potter = Book(title="Harry Potter 1 - The Philosopher's Stone", rating=5)
 harry_potter.save()
 lord_pf_the_rings = Book(title="Lord of the Rings", rating=4)
 lord_pf_the_rings.save()
+
 # Getting Data
 Book.objects.all()
+
 # Update Data
 python manage.py makemigrations  # select 2 Добавить в models null=True
 python manage.py migrate
@@ -40,10 +44,17 @@ lotr = Book.objects.all()[1]
 lotr.author = "J.R.R. Tolkien"
 lotr.is_bestselling = True
 lotr.save()
+
 # Delete Data
 harry_potter = Book.objects.all()[0]
 harry_potter.delete()
 Book.objects.all()
+
+# Create Instead of Save
+Book.objects.create(title="Harry Potter 1 - The Philosopher's Stone", rating=5, author="J.K. Rowling", is_bestselling=True)
+Book.objects.create(title="Some random book", rating=1, author="Random Dude", is_bestselling=False)
+Book.objects.all()
+
 # Выход
 exit()
 
