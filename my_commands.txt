@@ -40,6 +40,10 @@ lotr = Book.objects.all()[1]
 lotr.author = "J.R.R. Tolkien"
 lotr.is_bestselling = True
 lotr.save()
+# Delete Data
+harry_potter = Book.objects.all()[0]
+harry_potter.delete()
+Book.objects.all()
 # Выход
 exit()
 
