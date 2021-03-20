@@ -95,5 +95,12 @@ python manage.py createsuperuser
 python manage.py runserver
 
 
+# Если внесли ForeignKey в models
+python manage.py shell
+from book_outlet.models import Book
+Book.objects.all().delete()
+python manage.py migrate
+
+
 
 
