@@ -90,5 +90,9 @@ Book.objects.get(title="Some random book").slug
 python manage.py runserver
 
 
+=== Admin ===
+python manage.py createsuperuser
+
+
 
 
