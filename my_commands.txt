@@ -63,6 +63,11 @@ Book.objects.filter(rating__lt=3)  # rating < 3
 Book.objects.filter(rating__lt=3, title__contains="story")
 Book.objects.filter(rating__lt=3, title__icontains="story")
 
+# "or" Conditions
+from django.db.models import Q
+Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True))
+Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True), Q(author="J.K. Rowling"))
+
 # Выход
 exit()
 
