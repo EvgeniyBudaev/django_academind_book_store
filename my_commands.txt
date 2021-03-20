@@ -80,9 +80,13 @@ exit()
 # Slug
 python manage.py shell
 from book_outlet.models import Book
+Book.objects.all()
 Book.objects.get(title="Harry Potter 1").save()
-Book.objects.get(title="Harry Potter 1").slug()
+Book.objects.get(title="Harry Potter 1").slug
 Book.objects.get(title="Lord of the Rings").save()
-Book.objects.get(title="Lord of the Rings").slug()
+Book.objects.get(title="Lord of the Rings").slug
+Book.objects.get(title="Some random book").save()
+Book.objects.get(title="Some random book").slug
+python manage.py runserver
 
 
