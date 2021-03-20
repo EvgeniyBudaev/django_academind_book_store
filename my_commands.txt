@@ -30,6 +30,17 @@ python manage.py makemigrations  # select 2 Добавить в models null=True
 python manage.py migrate
 python manage.py shell
 from book_outlet.models import Book
-Book.objects.all()[1].author
+lotr = Book.objects.all()[1].author
+harry_potter = Book.objects.all()[0]
+harry_potter.author = "J.K. Rowling"
+harry_potter.is_bestselling = True
+harry_potter.save()
+Book.objects.all()[0].author
+lotr = Book.objects.all()[1]
+lotr.author = "J.R.R. Tolkien"
+lotr.is_bestselling = True
+lotr.save()
 # Выход
 exit()
+
+
