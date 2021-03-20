@@ -55,6 +55,14 @@ Book.objects.create(title="Harry Potter 1 - The Philosopher's Stone", rating=5, 
 Book.objects.create(title="Some random book", rating=1, author="Random Dude", is_bestselling=False)
 Book.objects.all()
 
+# Querying & Filtering Data
+Book.objects.get(id=3)
+Book.objects.get(rating=5)  # если несколько книг, то будет ошибка. только один элемент должен быть
+Book.objects.filter(is_bestselling=True) # будет несколько элементов
+Book.objects.filter(rating__lt=3)  # rating < 3
+Book.objects.filter(rating__lt=3, title__contains="story")
+Book.objects.filter(rating__lt=3, title__icontains="story")
+
 # Выход
 exit()
 
