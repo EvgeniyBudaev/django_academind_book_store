@@ -36,6 +36,7 @@ python manage.py shell
 from book_outlet.models import Book
 lotr = Book.objects.all()[1].author
 harry_potter = Book.objects.all()[0]
+harry_potter.title = "Harry Potter 1"
 harry_potter.author = "J.K. Rowling"
 harry_potter.is_bestselling = True
 harry_potter.save()
@@ -75,5 +76,13 @@ print(amazing_bestsellers)
 
 # Выход
 exit()
+
+# Slug
+python manage.py shell
+from book_outlet.models import Book
+Book.objects.get(title="Harry Potter 1").save()
+Book.objects.get(title="Harry Potter 1").slug()
+Book.objects.get(title="Lord of the Rings").save()
+Book.objects.get(title="Lord of the Rings").slug()
 
 
