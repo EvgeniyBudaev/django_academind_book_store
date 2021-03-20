@@ -68,6 +68,11 @@ from django.db.models import Q
 Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True))
 Book.objects.filter(Q(rating__lt=3) | Q(is_bestselling=True), Q(author="J.K. Rowling"))
 
+# Query Performance
+bestsellers = Book.objects.filter(is_bestselling=True)
+amazing_bestsellers = bestsellers.filter(rating__gt=4)  # rating > 4
+print(amazing_bestsellers)
+
 # Выход
 exit()
 
