@@ -127,6 +127,20 @@ jkr.books.all()
 jkr.books.get(title="Harry Potter 1")
 jkr.books.filter(rating__gt=3)
 
+# One-to-one Python Code
+python manage.py shell
+from book_outlet.models import Book, Author, Address
+Author.objects.all()[0].address
+addr1 = Address(street="Some Street", postal_code="123456", city="London")
+addr2 = Address(street="Another Street", postal_code="678900", city="New York")
+addr1.save()
+addr2.save()
+jkr = Author.objects.get(first_name="J.K.")
+jkr.address = addr1
+jkr.save()
+
+
+
 
 
 
