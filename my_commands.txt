@@ -113,6 +113,21 @@ Book.objects.all()
 harrypotter = Book.objects.get(title="Harry Potter 1")
 harrypotter.author
 harrypotter.author.first_name
+# Cross Model Queries
+books_by_rowling = Book.objects.filter(author__last_name="Rowling")
+books_by_rowling = Book.objects.filter(author__last_name__contains="wling")
+jkr = Author.objects.get(first_name="J.K.")
+jkr.book_set.all()
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+from book_outlet.models import Book, Author
+jkr = Author.objects.get(first_name="J.K.")
+jkr.books.all()
+jkr.books.get(title="Harry Potter 1")
+jkr.books.filter(rating__gt=3)
+
+
 
 
 
